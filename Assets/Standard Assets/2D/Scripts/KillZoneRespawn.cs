@@ -20,6 +20,7 @@ public class KillZoneRespawn : MonoBehaviour {
         if (player.gameObject.tag == "Player")
         {
             Debug.Log("Killzone Enter");
+            player.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             player.gameObject.transform.position = respawnPosition;
         }
     }
