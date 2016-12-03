@@ -11,6 +11,7 @@ public class ParticleDemo : MonoBehaviour
 	void OnDestroy()
 	{
         GameObject explosion = Instantiate (projectileExplosion, gameObject.transform.position, Quaternion.identity) as GameObject;
+        explosion.transform.Translate(0, 0, -1);
 
         int randCount = Random.Range (4, 8);
 

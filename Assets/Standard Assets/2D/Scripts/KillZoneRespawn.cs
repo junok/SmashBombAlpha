@@ -28,8 +28,18 @@ public class KillZoneRespawn : MonoBehaviour {
 
     void setDefault(Collider2D player)
     {
-        player.gameObject.GetComponentInChildren<Weapon>().bulletSpeed = 50;
-        player.gameObject.GetComponentInChildren<Weapon>().bulletLifeTime = 1.5f;
-        player.gameObject.GetComponentInChildren<PlayerKnockBack>().knockBack = 30;
+        if (player.gameObject.GetComponentInChildren<Weapon>() == null)
+        {
+            player.gameObject.GetComponentInChildren<Weapon2>().bulletSpeed = 50;
+            player.gameObject.GetComponentInChildren<Weapon2>().bulletLifeTime = 1.5f;
+            player.gameObject.GetComponentInChildren<PlayerKnockBack>().knockBack = 30;
+        }
+
+        if (player.gameObject.GetComponentInChildren<Weapon2>() == null)
+        {
+            player.gameObject.GetComponentInChildren<Weapon>().bulletSpeed = 50;
+            player.gameObject.GetComponentInChildren<Weapon>().bulletLifeTime = 1.5f;
+            player.gameObject.GetComponentInChildren<PlayerKnockBack>().knockBack = 30;
+        }
     }
 }
